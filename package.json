@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This function fetches invoices from Eukapay",
   "main": "index.js",
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC"
