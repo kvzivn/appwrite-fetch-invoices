@@ -1,6 +1,6 @@
 export default async ({ res, error }) => {
   try {
-    const response = await fetch("https://api.eukapay.com/invoices?limit=100", {
+    const response = await fetch("https://api.eukapay.com/invoices?limit=50", {
       headers: {
         "x-api-key": process.env.EUKAPAY_API_KEY,
         "Content-Type": "application/json",
