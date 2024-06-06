@@ -28,14 +28,15 @@ export default async ({ res, log, error }) => {
       if (hasMore) {
         pageParam.startingAfter = data.data[data.data.length - 1].code
       }
+      log("Fetched invoices: ", invoices.length)
     }
 
-    log("Fetched invoices:", invoices.length)
     return invoices
   }
 
   try {
     const allInvoices = await fetchInvoices()
+    log("Fetched all invoices: ", allInvoices.length)
     return res.json(allInvoices)
   } catch (err) {
     error("Error fetching data from EUKAPAY API:", err.message)
