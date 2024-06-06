@@ -4,7 +4,7 @@ export default async ({ res, log, error }) => {
     let hasMore = true
 
     while (hasMore) {
-      let query = `https://api.eukapay.com/invoices?limit=20`
+      let query = `https://api.eukapay.com/invoices?limit=100`
 
       if (pageParam.startingAfter) {
         query += `&starting_after=${pageParam.startingAfter}`
@@ -35,7 +35,6 @@ export default async ({ res, log, error }) => {
 
   try {
     const allInvoices = await fetchInvoices()
-    log("Fetched all invoices: ", allInvoices)
     return res.json(allInvoices)
   } catch (err) {
     error("Error fetching data from EUKAPAY API:", err.message)
